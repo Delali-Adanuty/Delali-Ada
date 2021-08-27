@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prom</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="preloader">
+        <div class="circle">
+            <div class="spin"></div>
+        </div>
+        <div class="name">
+            <h1>PROM</h1>
+        </div>
+    </div>
+
+    <div id="myCarousel" class="carousel slide home-section" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="overlay" style="  top: 0;
+                    position: absolute;
+                    height: 36rem;
+                    background: rgb(0, 0, 0);
+                    z-index: -10;
+                    width: 100%;
+                    opacity: .3;"></div>
+                <img src="images/georgia-de-lotz-JsQ6K5CfJ7s-unsplash.jpg" alt="">
+                <div class="container">
+                    <div class="carousel-caption ">
+                        <h1>PROM NIGHT.</h1>
+                        <p>A night to experience great music and dance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <!--   <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>-->
+                <div class="overlay" style="  top: 0;
+                    position: absolute;
+                    height: 36rem;
+                    background: rgb(0, 0, 0);
+                    z-index: -10;
+                    width: 100%;
+                    opacity: .3;"></div>
+                <img src="images/forest-simon-Pvq2Ik6yv6E-unsplash.jpg" alt="">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>PROM NIGHT</h1>
+                        <p>Some great artist will be present to give you the best of music you can get.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="overlay" style="  top: 0;
+                    position: absolute;
+                    height: 36rem;
+                    background: rgb(0, 0, 0);
+                    z-index: -10;
+                    width: 100%;
+                    opacity: .3;"></div>
+                <img src="images/scott-broome-BcVvVvqiCGA-unsplash.jpg" alt="">
+                <div class="container">
+                    <div class="carousel-caption ">
+                        <h1>PROM NIGHT</h1>
+                        <p>This PROM is in honor of your completion of high school.Come and join your love ones to celebrate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+
+    <div class="info-section">
+        <h2>More Info</h2>
+        <ul class="info-list">
+            <li>
+                <div class="info-card">
+                    <div class="box">
+                        <img src="images/calendar.svg" alt="">
+                    </div>
+                    <div class="text">
+                        <p>28th October, 2021</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="info-card">
+                    <div class="box">
+                        <img src="images/map-pin.svg" alt="">
+                    </div>
+                    <div class="text">
+                        <p>Golden Tulip</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="info-card">
+                    <div class="box">
+                        <img src="images/clock.svg" alt="">
+                    </div>
+                    <div class="text">
+                        <p>6PM</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!--Tickets-->
+    <div class="ticket-section">
+        <div class="col-12" style="padding: 0; margin-top: -.3%;">
+            <div class="box-element">
+
+                <h3 id="scrollspyTickets">Tickets Available:</h3>
+                <br>
+                <style>
+                    .box-element {
+                        background: #777;
+                        padding: 0 !important;
+                        margin: 0 !important;
+                        max-width: 99vw !important;
+                        overflow: hidden;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    
+                    .box-element h3 {
+                        padding: .7rem;
+                        text-align: center;
+                        color: white;
+                    }
+                    
+                    .card {
+                        width: 20rem;
+                        height: 290px;
+                        border-radius: 0.6rem;
+                        box-shadow: 0px 8px 8px 0px rgba(17, 16, 16, 0.425);
+                        border: none;
+                        background: black;
+                        margin-bottom: 2rem !important;
+                    }
+                    
+                    .card-img img {
+                        width: 100%;
+                        min-width: 270px;
+                        height: 250px;
+                        border-radius: 0.6rem;
+                        background-blend-mode: screen;
+                        object-fit: cover;
+                    }
+                    
+                    .card-content {
+                        color: rgba(255, 255, 255, 0.795);
+                        position: absolute;
+                        padding: 1rem;
+                        text-align: center;
+                        height: 100%;
+                        margin-top: 8%;
+                    }
+                    
+                    .card-content h3 {
+                        padding-bottom: 1.5rem;
+                        text-transform: uppercase;
+                        color: orange;
+                    }
+                    
+                    .card-content .btn-action .btn {
+                        border-radius: 2rem;
+                        margin-bottom: 3rem;
+                    }
+                </style>
+
+                <div class="row" style="padding: 1rem; align-items: center; justify-content: center;">
+
+
+                    <th class="col-lg-4  col-6">
+
+                        <div class="card regular-ticket-card" style="margin:0rem 2.63rem">
+                            <div class="card-content">
+                                <div class="icon"><img src="icons8_flower_bouquet_64px.png" alt=""></div>
+                                <h3>Regular Ticket</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, voluptatum?</p>
+                                <div class="btn-action  row" style="align-items: center; justify-content: center;">
+
+                                    <a href="#" class="btn btn-danger  col-lg-5 col-5" style="margin-bottom: 2rem;">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="col-lg-4 col-sm-6">
+                        <div class="card vip-ticket-card" style="margin:0rem 2.63rem">
+                            <div class="card-content">
+                                <div class="icon"><img src="icons8_christmas_star_48px_1.png" alt=""><img src="icons8_christmas_star_48px_1.png" alt=""><img src="icons8_christmas_star_48px_1.png" alt=""></div>
+                                <h3>VIP Ticket</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, voluptatum?</p>
+                                <div class="btn-action  row" style="align-items: center; justify-content: center;">
+
+                                    <a href="#" class="btn btn-danger  col-lg-5 col-5" style="margin-bottom: 2rem;">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="col-lg-4 col-sm-6">
+
+                        <div class="card table-ticket-card" style=" margin:0rem 2.63rem">
+                            <div class="card-content">
+                                <div class="icon"><img src="icons8_flower_bouquet_48px.png" alt=""></div>
+                                <h3>TABLE TICKET</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, voluptatum?</p>
+                                <div class="btn-action  row" style="align-items: center; justify-content: center;">
+
+                                    <a href="#" class="btn btn-danger  col-lg-5 col-5" style="margin-bottom: 2rem;">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </th>
+
+
+
+                </div>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="prom-honors-section">
+        <h2>Prom Honors</h2>
+        <div class="intel">
+            <p>There is an opportunity for you to become THE prom king or queen. You could also be THE BEST PROM COUPLE. All you have to do is to nominate yourself below.
+            </p>
+        </div>
+
+        <ul class="prom-honors-list">
+            <li class="prom-king">
+                <div class="prom-honor-card">
+                    <img src="images/Man-In-Suit-Silhouette.png">
+                    <p>Prom King</p>
+                </div>
+            </li>
+            <li class="prom-queen">
+                <div class="prom-honor-card">
+                    <img src="images/Man-In-Suit-Silhouette.png" alt="">
+                    <p>Prom Queen</p>
+                </div>
+            </li>
+            <li class="prom-couple">
+                <div class="prom-honor-card">
+                    <img src="images/Man-In-Suit-Silhouette.png" alt="">
+                    <p>Best Prom Couple</p>
+                </div>
+            </li>
+            <li class="gentleman">
+                <div class="prom-honor-card">
+                    <img src="images/Man-In-Suit-Silhouette.png" alt="">
+                    <p>Gentleman of the night</p>
+                </div>
+
+            </li>
+            <li class="lady">
+                <div class="prom-honor-card">
+                    <img src="images/FashionWoman.png" alt="">
+                    <p>Lady of the night</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="contact-section">
+        <div class="info-container">
+            <h2>Event Organisers</h2>
+            <div class="border">
+                <span class="border-center"></span>
+            </div>
+            <div class="card-wrapper">
+                <li>
+                    <div class="contact-card">
+                        <div class="image-box">
+                            <img src="images/download.png" alt="profile image" class="profile-img">
+                        </div>
+                        <div class="detail">
+                            <h1>Hope Mikaelson</h1>
+                            <section>
+                                <a href="#!">
+                                    <i data-feather="instagram"></i>
+                                    <p>blah_blah</p>
+                                </a>
+                            </section>
+                            <section>
+                                <a href="tel : 0592049890">
+                                    <i data-feather="phone"></i>
+                                    <p>023 424 7892</p>
+                                </a>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="contact-card">
+                        <div class="image-box">
+                            <img src="images/images.png" alt="profile image" class="profile-img">
+                        </div>
+                        <div class="detail">
+                            <h1>Hope Mikaelson</h1>
+                            <section>
+                                <a href="#!">
+                                    <i data-feather="instagram"></i>
+                                    <p>blah_blah</p>
+                                </a>
+                            </section>
+                            <section>
+                                <a href="#!">
+                                    <i data-feather="phone"></i>
+                                    <p>023 424 7892</p>
+                                </a>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="contact-card">
+                        <div class="image-box">
+                            <img src="images/Slemp.png" alt="profile image" class="profile-img">
+                        </div>
+                        <div class="detail">
+                            <h1>Hope Mikaelson</h1>
+                            <section>
+                                <a href="#!">
+                                    <i data-feather="instagram"></i>
+                                    <p>blah_blah</p>
+                                </a>
+                            </section>
+                            <section>
+                                <a href="#!">
+                                    <i data-feather="phone"></i>
+                                    <p>023 424 7892</p>
+                                </a>
+                            </section>
+                        </div>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </div>
+
+
+
+    <nav class="navigation">
+        <ul class="left">
+            <li>
+                <h2>PROM</h2>
+            </li>
+        </ul>
+        <ul class="right">
+            <li class="home">
+                <section class="icon">
+                    <i data-feather="home"></i>
+                </section>
+                <p>Home</p>
+            </li>
+            <li class="info">
+                <section class="icon">
+                    <i data-feather="info"></i>
+                </section>
+                <p>About</p>
+            </li>
+            <li class="tickets">
+                <section class="icon">
+                    <i data-feather="credit-card"></i>
+                </section>
+                <p>Tickets</p>
+            </li>
+            <li class="prom-honors">
+                <section class="icon">
+                    <i data-feather="award"></i>
+                </section>
+                <p>Prom Honors</p>
+            </li>
+            <li class="contact">
+                <section class="icon">
+                    <i data-feather="phone"></i>
+                </section>
+                <p>Contact Us</p>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/feather.js"></script>
+</body>
+
+</html>
