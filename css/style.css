@@ -161,7 +161,8 @@ nav.navigation ul li section.icon {
     text-align: center;
 }
 
-.info-section ul.info-list {
+.info-section ul.info-list,
+div.info-section .card-wrapper {
     padding: 0rem 0rem !important;
     display: flex;
     flex-direction: row;
