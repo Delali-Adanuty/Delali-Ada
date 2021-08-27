@@ -47,5 +47,4 @@ function showPromHonorsSection() {
 
 function showContactSection() {
     contactSection.scrollIntoView();
-    console.log(homeContact)
 }
