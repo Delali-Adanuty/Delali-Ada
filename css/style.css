@@ -365,7 +365,7 @@ div.info-container .contact-card section a p {
 @media screen and (min-device-width:280px) and (max-device-width:480px) {
     body {
         max-width: 100vw;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
     }
     nav.navigation {
         bottom: 0;
@@ -395,7 +395,8 @@ div.info-container .contact-card section a p {
         padding-top: 1rem;
         margin-bottom: 3.7rem;
     }
-    .info-section ul.info-list {
+    .info-section ul.info-list,
+    div.info-section .card-wrapper {
         display: grid;
     }
     .info-section ul.info-list li {
@@ -417,7 +418,8 @@ div.info-container .contact-card section a p {
     .prom-honors-section {
         padding-top: 2rem;
     }
-    .prom-honors-section ul.prom-honors-list {
+    .prom-honors-section ul.prom-honors-list,
+    .contact-section .info-container .card-wrapper {
         display: grid;
         justify-content: center;
         padding: 0rem !important
@@ -435,7 +437,8 @@ div.info-container .contact-card section a p {
         box-shadow: none;
     }
     div.info-container .contact-card {
-        margin: 2rem 3rem;
+        margin: 2rem 0rem;
+        align-items: center;
     }
 }
 
