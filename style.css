@@ -1,0 +1,667 @@
+:root {
+    scroll-behavior: smooth;
+    --background-color: white;
+    --text-color: orange;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, 'dm sans', 'calibri';
+}
+
+body {
+    background: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+nav.navigation {
+    width: 100vw;
+    position: fixed;
+    z-index: 1;
+    background-color: var(--background-color);
+    line-height: 42px;
+    max-height: 4rem;
+    opacity: 0.9;
+}
+
+nav.navigation ul li {
+    display: inline-block;
+    padding: 0.6rem 0.78rem;
+    font-size: 1.03rem;
+    margin: 0rem 0.34rem;
+}
+
+nav.navigation ul li:hover {
+    cursor: pointer
+}
+
+nav.navigation ul.left {
+    float: left;
+}
+
+nav.navigation ul.right {
+    float: right;
+    margin: 0rem 0rem;
+    margin-right: 1.72rem;
+}
+
+nav.navigation ul li section.icon {
+    display: none;
+}
+
+#myCarousel {
+    z-index: 1;
+}
+
+.carousel-item {
+    margin-bottom: 4rem;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    background-blend-mode: overlay;
+}
+
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}
+
+.carousel-caption h1 {
+    color: orange;
+}
+
+.carousel-item {
+    height: 36rem;
+}
+
+.carousel-item .container {
+    z-index: -10;
+}
+
+.carousel-item>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 36rem;
+    image-rendering: pixelated;
+    box-sizing: border-box;
+    z-index: -22;
+    object-fit: cover;
+}
+
+.marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.marketing h2 {
+    font-weight: 400;
+}
+
+.marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+}
+
+.featurette-divider {
+    margin: 5rem 0;
+}
+
+.featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    /* rtl:remove */
+    letter-spacing: -.05rem;
+}
+
+.preloader {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background: var(--background-color);
+    display: grid;
+    justify-content: center;
+}
+
+.circle {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background: linear-gradient(to right, orange, rgb(231, 184, 96), rgb(255, 230, 183), white, white);
+    margin-top: 40vh;
+    animation: spin 0.43s linear infinite;
+}
+
+.spin {
+    width: 6.5rem;
+    height: 6.5rem;
+    margin: 0.25rem;
+    background-color: var(--background-color);
+    border-radius: 50%;
+}
+
+.preloader .name h1 {
+    color: var(--text-color)
+}
+
+.info-section,
+.ticket-section,
+.prom-honors-section {
+    margin-bottom: 3rem;
+}
+
+.info-section h2 {
+    margin: 1rem 2rem;
+    text-align: center;
+}
+
+.info-section ul.info-list,
+div.info-section .card-wrapper {
+    padding: 0rem 0rem !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.info-section ul.info-list li {
+    list-style-type: none;
+    margin: 0rem 2.63rem;
+}
+
+.info-section ul.info-list li div.info-card {
+    border: 2px solid orange;
+    border-radius: 0.6rem;
+    padding: 2rem 3rem;
+    width: 20rem;
+}
+
+.info-section ul.info-list li div.info-card div.box {
+    display: grid;
+    justify-content: center;
+}
+
+.info-section ul.info-list li div.info-card div.box img {
+    height: 4rem;
+}
+
+.info-section ul.info-list li div.info-card div.text p {
+    text-align: center;
+    margin: 1.4rem 0rem 0rem;
+    font-size: 1.13rem;
+}
+
+.prom-honors-section {
+    display: grid;
+    justify-content: center;
+    margin-top: 4rem
+}
+
+.prom-honors-section h2 {
+    text-align: center;
+}
+
+.prom-honors-section .intel {
+    top: 1rem;
+    background-color: var(--background-color);
+    z-index: 2 !important;
+    margin: 0.2rem 1.2rem;
+    padding: 0.7rem 1.13rem;
+    border-radius: 1rem;
+    border: 1px solid orange;
+}
+
+.prom-honors-section .intel p {
+    font-size: 1.13rem;
+}
+
+.prom-honors-section ul.prom-honors-list li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0.3rem 0.3rem;
+    padding: 1.4rem 1rem;
+}
+
+.prom-honors-section ul.prom-honors-list li .prom-honor-card {
+    border-radius: 0.6rem;
+    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.2);
+    padding: 1rem 2rem;
+}
+
+.prom-honors-section ul.prom-honors-list li img {
+    height: 20rem;
+}
+
+.prom-honors-section ul.prom-honors-list li p {
+    font-size: 1.14rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.prom-honors-section button.vote-button {
+    color: var(--background-color);
+    background: var(--text-color);
+    border: none;
+    outline: none;
+    font-size: 1.24rem;
+    padding: 0.7rem 0.7rem;
+    margin: 0rem 3rem;
+    border-radius: 7px;
+}
+
+.contact-section {
+    padding-top: 2rem;
+}
+
+div.info-container {
+    margin-bottom: 4rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-container h2 {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+div.border {
+    display: grid;
+    justify-content: center;
+}
+
+div.info-container span.border-center {
+    background-color: orange;
+    width: 8rem;
+    height: 0.36rem;
+    display: block;
+    border-radius: 5px;
+    margin: 1.7rem 0rem;
+}
+
+div.info-container div.border {
+    border: none !important;
+}
+
+div.info-container .contact-card {
+    display: grid;
+    justify-content: center;
+    border-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.2);
+    margin: 0rem 3rem;
+    padding: 2rem 3rem;
+    padding-bottom: 1rem;
+}
+
+div.info-container li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+div.info-container .contact-card img.profile-img {
+    width: 10rem;
+    height: 10rem;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+div.info-container .contact-card .image-box {
+    display: grid;
+    justify-content: center;
+}
+
+div.info-container .contact-card h1 {
+    font-size: 1.2rem;
+    margin: 1.4rem 0rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+div.info-container .contact-card section a {
+    color: orange;
+    text-decoration: none;
+    display: flex;
+    margin: 1rem 0rem;
+}
+
+div.info-container .contact-card section a p {
+    font-size: 1.13rem;
+    margin: 0rem 1rem;
+}
+
+div.ticket-modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: var(--background-color);
+    z-index: 3;
+    display: grid;
+    justify-content: center;
+    display: none;
+    animation: slideDown 0.32s linear;
+}
+
+div.table-ticket {
+    overflow-y: scroll;
+}
+
+div.table-ticket button {
+    margin-bottom: 3rem;
+}
+
+div.ticket-modal form {
+    margin-top: -10rem;
+}
+
+div.table-ticket form {
+    margin-top: 0rem;
+}
+
+div.ticket-modal h1,
+div.table-ticket h2 {
+    font-size: 1.35rem;
+    text-align: center;
+    margin: 3rem 0rem;
+}
+
+div.table-ticket h2 {
+    margin: 1rem 0rem;
+    text-align: left;
+}
+
+div.ticket-modal label {
+    font-size: 1.3rem;
+    margin-right: 2rem;
+    margin-left: 0.1rem
+}
+
+div.ticket-modal input[type='text'],
+div.ticket-modal input[type='email'],
+div.ticket-modal input[type='number'],
+div.ticket-modal input[type='file'] {
+    outline: none;
+    border: 2px solid var(--text-color);
+    padding: 0.24rem 0.51rem;
+    border-radius: 4px;
+    font-size: 1.3rem;
+    margin: 1rem 0rem;
+    margin-top: 0.2rem;
+    width: 30rem;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+div.table-ticket input[type="number"].qty {
+    width: 3rem !important;
+    font-size: 1rem;
+}
+
+.head-section {
+    display: flex;
+}
+
+.head-section h2.food {
+    width: 10rem;
+    margin-right: 2rem;
+}
+
+div.table-ticket label.food {
+    width: 10rem;
+}
+
+div.ticket-modal input[type='checkbox'] {
+    transform: scale(1.3);
+}
+
+div.ticket-modal button,
+.vote-section .submit-vote,
+.ticket-modal section li.cancel {
+    border: none;
+    outline: none;
+    padding: 0.78rem 2rem;
+    margin: 1rem 0rem;
+    margin-right: 2rem;
+    border-radius: 4px;
+    font-size: 1.16rem;
+    font-weight: 500;
+    list-style-type: none;
+}
+
+.ticket-modal div.flex-form-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.ticket-modal section li.cancel {
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    background: var(--background-color);
+    padding: 0.4rem 2rem;
+    width: 8rem;
+}
+
+div.ticket-modal button[type="submit"],
+.vote-section .submit-vote {
+    background-color: var(--text-color);
+}
+
+.vote-section {
+    display: none;
+}
+
+.vote-section form ul {
+    max-width: 100vw;
+    overflow-x: auto;
+    display: flex;
+    padding: 1rem 0rem;
+    margin: 2rem 0rem;
+}
+
+.vote-section form ul li {
+    margin: 0rem 2rem;
+    list-style-type: none;
+    box-shadow: 0.35rem 0.35rem 1rem rgba(0, 0, 0, 0.42);
+    padding: 0.4rem 2rem;
+    border-radius: 5px;
+}
+
+.vote-section form ul li img {
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.vote-section form ul li p {
+    font-size: 1.13rem;
+    text-align: center;
+    margin: 0.3rem 0rem;
+}
+
+.vote-section form ul li label {
+    font-size: 1.14rem;
+    margin-left: 0.2rem;
+}
+
+.vote-section h1 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.vote-section button.submit-vote {
+    margin: 0rem 4rem;
+}
+
+
+/*Tickets*/
+
+@media (prefers-color-scheme:dark) {
+     :root {
+        --background-color: #202020;
+    }
+    .circle {
+        background: linear-gradient(to right, orange, rgb(185, 123, 6), rgb(105, 71, 7), #202020, #202020);
+    }
+}
+
+@media (min-width: 40em) {
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 62em) {
+    .featurette-heading {
+        margin-top: 7rem;
+    }
+}
+
+@media screen and (min-device-width:481px) {
+    nav.navigation {
+        top: 0;
+    }
+}
+
+@media screen and (min-device-width:280px) and (max-device-width:480px) {
+    body {
+        max-width: 100vw;
+        overflow-x: hidden !important;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    nav.navigation {
+        bottom: -1%;
+        box-shadow: 0px 0px 3.34px rgba(95, 94, 92, 0.418);
+        opacity: 0.96;
+        margin-top: 8rem
+    }
+    nav.navigation ul li p {
+        display: none;
+    }
+    nav.navigation ul li section.icon {
+        display: block;
+    }
+    nav.navigation ul.left {
+        display: none;
+    }
+    nav.navigation ul.right {
+        margin-right: 0rem;
+        margin-left: 0rem;
+        float: none;
+        display: flex;
+        flex-direction: row;
+        padding: 0rem 0rem;
+        justify-content: center;
+    }
+    .info-section {
+        padding-top: 1rem;
+        margin-bottom: 3.7rem;
+    }
+    .info-section ul.info-list,
+    div.info-section .card-wrapper {
+        display: grid;
+    }
+    .info-section ul.info-list li {
+        margin: 1rem 0rem;
+        align-items: center;
+    }
+    .info-section ul.info-list li div.info-card {
+        width: 15rem;
+        justify-content: center;
+        padding: 1.4rem 2rem;
+        border: none;
+        box-shadow: 0.17rem 0.17rem 0.8rem rgba(95, 94, 92, 0.418);
+    }
+    .ticket-section .card {
+        border-radius: 2rem;
+        width: 18.5rem;
+        min-height: fit-content;
+    }
+    .prom-honors-section {
+        padding-top: 2rem;
+    }
+    .prom-honors-section ul.prom-honors-list,
+    .contact-section .info-container .card-wrapper {
+        display: grid;
+        justify-content: center;
+        padding: 0rem !important
+    }
+    .prom-honors-section ul.prom-honors-list li img {
+        height: 10rem;
+    }
+    .prom-honors-section ul.prom-honors-list li {
+        margin: 0rem;
+        padding: 1.4rem 1rem;
+    }
+    .prom-honors-section ul.prom-honors-list li div.img-card {
+        display: grid;
+        justify-content: center;
+    }
+    .prom-honors-section ul.prom-honors-list .prom-honor-card {
+        padding: 1rem 2rem;
+        margin: 0rem 0rem;
+        box-shadow: none;
+    }
+    div.info-container .contact-card {
+        margin: 2rem 0rem;
+        align-items: center;
+    }
+    div.ticket-modal {
+        display: grid;
+        justify-content: center;
+        display: none;
+    }
+    div.ticket-modal input[type='text'],
+    div.ticket-modal input[type='email'],
+    div.ticket-modal input[type='number'],
+    div.ticket-modal input[type='file'] {
+        width: 90vw;
+        margin-top: 0.2rem;
+        font-size: 1.13rem;
+    }
+    div.ticket-modal form {
+        margin-top: 0rem;
+    }
+    div.ticket-modal label {
+        font-size: 1.1rem;
+        margin-right: 1rem;
+    }
+    div.ticket-modal button {
+        font-size: 1.12rem;
+        padding: 0.5rem 1.7rem;
+    }
+    .ticket-modal li.cancel {
+        padding: 0.48rem 1.7rem;
+    }
+    .vote-section ul form li img {
+        height: 10rem;
+        width: 10rem;
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-8vh);
+    }
+}

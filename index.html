@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    <!-- Preloader-->
     <div class="preloader">
         <div class="circle">
             <div class="spin"></div>
@@ -22,7 +22,7 @@
             <h1>PROM</h1>
         </div>
     </div>
-
+    <!-- Home Carousel-->
     <div id="myCarousel" class="carousel slide home-section" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -84,7 +84,7 @@
       <span class="visually-hidden">Next</span>
     </button>
     </div>
-
+    <!-- Info Section-->
     <div class="info-section">
         <h2>More Info</h2>
         <ul class="info-list">
@@ -114,7 +114,7 @@
                         <img src="images/clock.svg" alt="">
                     </div>
                     <div class="text">
-                        <p>6PM</p>
+                        <p>5PM - 9PM</p>
                     </div>
                 </div>
             </li>
@@ -147,7 +147,7 @@
                     
                     .card {
                         width: 20rem;
-                        height: 290px;
+                        height: 310px;
                         border-radius: 0.6rem;
                         box-shadow: 0px 8px 8px 0px rgba(17, 16, 16, 0.425);
                         border: none;
@@ -194,10 +194,10 @@
                             <div class="card-content">
                                 <div class="icon"><img src="icons8_flower_bouquet_64px.png" alt=""></div>
                                 <h3>Regular Ticket</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, voluptatum?</p>
+                                <p>Available for singles and couples. As part of the package you are served with a few food items.</p>
                                 <div class="btn-action  row" style="align-items: center; justify-content: center;">
 
-                                    <button class="btn btn-danger  col-lg-5 col-5" style="margin-bottom: 2rem;">Purchase</button>
+                                    <button class="btn btn-danger  col-lg-5 col-5 regular-ticket-button" style="margin-bottom: 2rem;">Purchase</button>
                                 </div>
                             </div>
                         </div>
@@ -207,10 +207,10 @@
                             <div class="card-content">
                                 <div class="icon"><img src="icons8_christmas_star_48px_1.png" alt=""><img src="icons8_christmas_star_48px_1.png" alt=""><img src="icons8_christmas_star_48px_1.png" alt=""></div>
                                 <h3>VIP Ticket</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, voluptatum?</p>
+                                <p>Also available for singles and couples. You also get food items but of more variety than the regular.</p>
                                 <div class="btn-action  row" style="align-items: center; justify-content: center;">
 
-                                    <button class="btn btn-danger  col-lg-5 col-5" style="margin-bottom: 2rem;">Purchase</button>
+                                    <button class="btn btn-danger  col-lg-5 col-5 vip-ticket-button" style="margin-bottom: 2rem;">Purchase</button>
                                 </div>
                             </div>
                         </div>
@@ -221,10 +221,10 @@
                             <div class="card-content">
                                 <div class="icon"><img src="icons8_flower_bouquet_48px.png" alt=""></div>
                                 <h3>TABLE TICKET</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, voluptatum?</p>
+                                <p>You are your own boss as you get to choose what foods you want and the number of people on the table.</p>
                                 <div class="btn-action  row" style="align-items: center; justify-content: center;">
 
-                                    <button class="btn btn-danger  col-lg-5 col-5" style="margin-bottom: 2rem;">Purchase</button>
+                                    <button class="btn btn-danger  col-lg-5 col-5 table-ticket-button" style="margin-bottom: 2rem;">Purchase</button>
                                 </div>
                             </div>
                         </div>
@@ -239,6 +239,96 @@
         </div>
     </div>
 
+    <div class="regular-ticket ticket-modal">
+        <h1>Regular Ticket</h1>
+        <form action="" method="POST">
+            {% csrf_token %} {{ payment_form }}
+            <label for="name">Name : </label><br>
+            <input type="text" placeholder="Enter your name here : "><br>
+            <label for="email">Email : </label><br>
+            <input type="email" placeholder="Enter your email here : "><br>
+            <label for="number">Email : </label><br>
+            <input type="number" placeholder="Enter your phone numbers here : "><br>
+            <input type="radio" name="type" id="single">
+            <label for="single">Single ($100)</label>
+            <input type="radio" name="type" id="couple">
+            <label for="couple">Couple ($150)</label><br>
+            <div class="flex-form-buttons">
+                <section>
+                    <li class="cancel">Cancel</li>
+                </section>
+                <button type="submit" class="confirm">Confirm</button>
+            </div>
+        </form>
+    </div>
+    <!--Forms for Table ticket-->
+    <div class="vip-ticket ticket-modal">
+        <h1>VIP Ticket</h1>
+        <form>
+            <label for="name">Name : </label><br>
+            <input type="text" placeholder="Enter your name here : "><br>
+            <label for="email">Email : </label><br>
+            <input type="email" placeholder="Enter your email here : "><br>
+            <input type="radio" name="type" id="single">
+            <label for="single">Single ($200)</label>
+            <input type="radio" name="type" id="couple">
+            <label for="couple">Couple ($250)</label><br>
+            <div class="flex-form-buttons">
+                <section>
+                    <li class="cancel">Cancel</li>
+                </section>
+                <button type="submit" class="confirm">Confirm</button>
+            </div>
+        </form>
+    </div>
+    <!-- Table Ticket-->
+    <div class="table-ticket ticket-modal">
+        <h1>Table Ticket</h1>
+        <form>
+            <label for="name">Name : </label><br>
+            <input type="text" placeholder="Enter your name here : "><br>
+            <label for="email">Email : </label><br>
+            <input type="email" placeholder="Enter your email here : "><br>
+            <label for="Number">Number of people (Max : 6): </label><br>
+            <input type="number" placeholder="Enter number of people : " min='1' max='6'><br>
+            <div class="head-section">
+                <h2 class="food">Foods</h2>
+                <h2>Qty</h2>
+            </div>
+            <input type="checkbox" name="type" id="rice">
+            <label for="rice" class="food">Rice ($200)</label>
+            <input type="number" class="qty"><br>
+            <input type="checkbox" name="type" id="beans">
+            <label for="beans" class="food">Beans ($250)</label>
+            <input type="number" class="qty"><br>
+            <input type="checkbox" name="type" id="banku">
+            <label for="banku" class="food">Banku ($200)</label>
+            <input type="number" class="qty"><br>
+            <input type="checkbox" name="type" id="yam">
+            <label for="yam" class="food">Yam ($250)</label>
+            <input type="number" class="qty"><br>
+            <h2>Drinks</h2>
+            <input type="checkbox" name="type" id="drink">
+            <label for="drink" class="food">Rice ($200)</label>
+            <input type="number" class="qty"><br>
+            <input type="checkbox" name="type" id="malt">
+            <label for="malt" class="food">Malt ($250)</label>
+            <input type="number" class="qty"><br>
+            <input type="checkbox" name="type" id="don simon">
+            <label for="don simon" class="food">Don Simon($200)</label>
+            <input type="number" class="qty"><br>
+            <input type="checkbox" name="type" id="coke">
+            <label for="coke" class="food">Coke ($250)</label>
+            <input type="number" class="qty"><br>
+            <div class="flex-form-buttons">
+                <section>
+                    <li class="cancel">Cancel</li>
+                </section>
+                <button type="submit" class="confirm">Confirm</button>
+            </div>
+        </form>
+    </div>
+    <!-- Prom Honors-->
     <div class="prom-honors-section">
         <h2>Prom Honors</h2>
         <div class="intel">
@@ -249,37 +339,432 @@
         <ul class="prom-honors-list">
             <li class="prom-king">
                 <div class="prom-honor-card">
-                    <img src="images/Man-In-Suit-Silhouette.png">
-                    <p>Prom King</p>
+                    <div class="img-card">
+                        <img src="images/Man-In-Suit-Silhouette.png">
+                    </div>
+                    <p>Prom King ($150)</p>
                 </div>
             </li>
             <li class="prom-queen">
                 <div class="prom-honor-card">
-                    <img src="images/Man-In-Suit-Silhouette.png" alt="">
-                    <p>Prom Queen</p>
+                    <div class="img-card">
+                        <img src="images/Man-In-Suit-Silhouette.png">
+                    </div>
+                    <p>Prom Queen ($150)</p>
                 </div>
             </li>
             <li class="prom-couple">
                 <div class="prom-honor-card">
-                    <img src="images/Man-In-Suit-Silhouette.png" alt="">
-                    <p>Best Prom Couple</p>
+                    <div class="img-card">
+                        <img src="images/Man-In-Suit-Silhouette.png">
+                    </div>
+                    <p>Best Prom Couple ($150)</p>
                 </div>
             </li>
             <li class="gentleman">
                 <div class="prom-honor-card">
-                    <img src="images/Man-In-Suit-Silhouette.png" alt="">
-                    <p>Gentleman of the night</p>
+                    <div class="img-card">
+                        <img src="images/Man-In-Suit-Silhouette.png">
+                    </div>
+                    <p>Gentleman of the night ($150)</p>
                 </div>
 
             </li>
             <li class="lady">
                 <div class="prom-honor-card">
-                    <img src="images/FashionWoman.png" alt="">
-                    <p>Lady of the night</p>
+                    <div class="img-card">
+                        <img src="images/FashionWoman.png" alt="">
+                    </div>
+                    <p>Lady of the night ($150)</p>
+                </div>
+            </li>
+            <li class="outfit">
+                <div class="prom-honor-card">
+                    <div class="img-card">
+                        <img src="images/FashionWoman.png" alt="">
+                    </div>
+                    <p>Best Outfit ($150)</p>
                 </div>
             </li>
         </ul>
+        <button class="vote-button">Vote for Prom Honors</button>
     </div>
+    <!--Prom King form-->
+    <div class="ticket-modal king-modal">
+        <h1>Prom King</h1>
+        <form>
+            <label for="name">Name : </label><br>
+            <input type="text" placeholder="Enter your name here : "><br>
+            <label for="email">Email : </label><br>
+            <input type="email" placeholder="Enter your email here : "><br>
+            <label for="ticket-id">Ticket ID</label><br>
+            <input type="number" placeholder="Enter your ticket number here :"><br>
+            <label for="picture">Picture (Optional)</label><br>
+            <input type="file"><br>
+            <div class="flex-form-buttons">
+                <section>
+                    <li class="cancel">Cancel</li>
+                </section>
+                <button type="submit" class="confirm">Confirm</button>
+            </div>
+        </form>
+    </div>
+    <!--Prom Queen form-->
+    <div class="ticket-modal queen-modal">
+        <h1>Prom Queen</h1>
+        <form>
+            <label for="name">Name : </label><br>
+            <input type="text" placeholder="Enter your name here : "><br>
+            <label for="email">Email : </label><br>
+            <input type="email" placeholder="Enter your email here : "><br>
+            <label for="ticket-id">Ticket ID</label><br>
+            <input type="number" placeholder="Enter your ticket number here :"><br>
+            <label for="picture">Picture (Optional)</label><br>
+            <input type="file"><br>
+            <div class="flex-form-buttons">
+                <section>
+                    <li class="cancel">Cancel</li>
+                </section>
+                <button type="submit" class="confirm">Confirm</button>
+            </div>
+        </form>
+    </div>
+    <!--Prom Best Couple form-->
+    <div class="ticket-modal couple-modal">
+        <h1>Prom Couple</h1>
+        <form>
+            <label for="name">Name : </label><br>
+            <input type="text" placeholder="Enter your name here : "><br>
+            <label for="email">Email : </label><br>
+            <input type="email" placeholder="Enter your email here : "><br>
+            <label for="ticket-id">Ticket ID</label><br>
+            <input type="number" placeholder="Enter your ticket number here :"><br>
+            <label for="picture">Picture (Optional)</label><br>
+            <input type="file"><br>
+            <div class="flex-form-buttons">
+                <section>
+                    <li class="cancel">Cancel</li>
+                </section>
+                <button type="submit" class="confirm">Confirm</button>
+            </div>
+        </form>
+    </div>
+    <!--Prom Gentleman form-->
+    <div class="ticket-modal gentleman-modal">
+        <h1>Gentleman of the Night</h1>
+        <form>
+            <label for="name">Name : </label><br>
+            <input type="text" placeholder="Enter your name here : "><br>
+            <label for="email">Email : </label><br>
+            <input type="email" placeholder="Enter your email here : "><br>
+            <label for="ticket-id">Ticket ID</label><br>
+            <input type="number" placeholder="Enter your ticket number here :"><br>
+            <label for="picture">Picture (Optional)</label><br>
+            <input type="file"><br>
+            <div class="flex-form-buttons">
+                <section>
+                    <li class="cancel">Cancel</li>
+                </section>
+                <button type="submit" class="confirm">Confirm</button>
+            </div>
+        </form>
+    </div>
+    <!--Prom Lady of the night form-->
+    <div class="ticket-modal lady-modal">
+        <h1>Lady of the night</h1>
+        <form>
+            <label for="name">Name : </label><br>
+            <input type="text" placeholder="Enter your name here : "><br>
+            <label for="email">Email : </label><br>
+            <input type="email" placeholder="Enter your email here : "><br>
+            <label for="ticket-id">Ticket ID</label><br>
+            <input type="number" placeholder="Enter your ticket number here :"><br>
+            <label for="picture">Picture (Optional)</label><br>
+            <input type="file"><br>
+            <div class="flex-form-buttons">
+                <section>
+                    <li class="cancel">Cancel</li>
+                </section>
+                <button type="submit" class="confirm">Confirm</button>
+            </div>
+        </form>
+    </div>
+    <!--Prom Best Outfit form-->
+    <div class="ticket-modal outfit-modal">
+        <h1>Best Outfit</h1>
+        <form>
+            <label for="name">Name : </label><br>
+            <input type="text" placeholder="Enter your name here : "><br>
+            <label for="email">Email : </label><br>
+            <input type="email" placeholder="Enter your email here : "><br>
+            <label for="ticket-id">Ticket ID</label><br>
+            <input type="number" placeholder="Enter your ticket number here :"><br>
+            <label for="picture">Picture (Optional)</label><br>
+            <input type="file"><br>
+            <div class="flex-form-buttons">
+                <section>
+                    <li class="cancel">Cancel</li>
+                </section>
+                <button type="submit" class="confirm">Confirm</button>
+            </div>
+        </form>
+    </div>
+
+    <!--Vote Section-->
+    <div class="vote-section">
+        <form>
+            <div class="king-awards">
+                <h1>Prom King - Nominees</h1>
+                <ul>
+                    <li>
+                        <img src="images/Slemp.png" alt="">
+                        <p class="name">Marcus Thom</p>
+                        <input type="radio" name="king" id="marcus">
+                        <label for="marcus">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/Slemp.png" alt="">
+                        <p class="name">Marcus Thom</p>
+                        <input type="radio" name="king" id="marcus">
+                        <label for="marcus">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="queen-awards">
+                <h1>Prom Queen - Nominees</h1>
+                <ul>
+                    <li>
+                        <img src="images/Slemp.png" alt="">
+                        <p class="name">Adjoa Linda</p>
+                        <input type="radio" name="king" id="adjoa">
+                        <label for="adjoa">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">Sofie Browne</p>
+                        <input type="radio" name="king" id="sofie">
+                        <label for="sofie">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/Slemp.png" alt="">
+                        <p class="name">Rose Koomson</p>
+                        <input type="radio" name="king" id="rose">
+                        <label for="rose">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">Sandra James</p>
+                        <input type="radio" name="king" id="sandra">
+                        <label for="sandra">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">Ella Shay</p>
+                        <input type="radio" name="king" id="ella">
+                        <label for="ella">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">Adu Gyamfuaa</p>
+                        <input type="radio" name="king" id="adu">
+                        <label for="adu">Vote</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="gentleman-awards">
+                <h1>Gentleman of the NIght - Nominees</h1>
+                <ul>
+                    <li>
+                        <img src="images/Slemp.png" alt="">
+                        <p class="name">Marcus Thom</p>
+                        <input type="radio" name="king" id="marcus">
+                        <label for="marcus">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/Slemp.png" alt="">
+                        <p class="name">Marcus Thom</p>
+                        <input type="radio" name="king" id="marcus">
+                        <label for="marcus">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="lady-awards">
+                <h1>Lady of the Night - Nominees</h1>
+                <ul>
+                    <li>
+                        <img src="images/Slemp.png" alt="">
+                        <p class="name">Marcus Thom</p>
+                        <input type="radio" name="king" id="marcus">
+                        <label for="marcus">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/Slemp.png" alt="">
+                        <p class="name">Marcus Thom</p>
+                        <input type="radio" name="king" id="marcus">
+                        <label for="marcus">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="couple-awards">
+                <h1>Prom Couple - Nominees</h1>
+                <ul>
+                    <li>
+                        <img src="images/Slemp.png" alt="">
+                        <p class="name">Marcus Thom</p>
+                        <input type="radio" name="king" id="marcus">
+                        <label for="marcus">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/Slemp.png" alt="">
+                        <p class="name">Marcus Thom</p>
+                        <input type="radio" name="king" id="marcus">
+                        <label for="marcus">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="outfit-awards">
+                <h1>Best Outfit - Nominees</h1>
+                <ul>
+                    <li>
+                        <img src="images/Slemp.png" alt="">
+                        <p class="name">Marcus Thom</p>
+                        <input type="radio" name="king" id="marcus">
+                        <label for="marcus">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/Slemp.png" alt="">
+                        <p class="name">Marcus Thom</p>
+                        <input type="radio" name="king" id="marcus">
+                        <label for="marcus">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                    <li>
+                        <img src="images/download.png" alt="">
+                        <p class="name">James Thawne</p>
+                        <input type="radio" name="king" id="james">
+                        <label for="james">Vote</label>
+                    </li>
+                </ul>
+            </div>
+            <button type="submit" class="submit-vote">Cast your Vote</button>
+        </form>
+
+    </div>
+
+    <!-- Contact -->
     <div class="contact-section">
         <div class="info-container">
             <h2>Event Organisers</h2>
@@ -357,8 +842,7 @@
         </div>
     </div>
 
-
-
+    <!-- Navbar -->
     <nav class="navigation">
         <ul class="left">
             <li>
