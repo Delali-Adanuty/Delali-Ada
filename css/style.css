@@ -209,7 +209,7 @@ div.info-section .card-wrapper {
 .prom-honors-section .intel {
     top: 1rem;
     background-color: var(--background-color);
-    z-index: 2;
+    z-index: 2 !important;
     margin: 0.2rem 1.2rem;
     padding: 0.7rem 1.13rem;
     border-radius: 1rem;
@@ -241,6 +241,17 @@ div.info-section .card-wrapper {
     font-size: 1.14rem;
     font-weight: 600;
     text-align: center;
+}
+
+.prom-honors-section button.vote-button {
+    color: var(--background-color);
+    background: var(--text-color);
+    border: none;
+    outline: none;
+    font-size: 1.24rem;
+    padding: 0.7rem 0.7rem;
+    margin: 0rem 3rem;
+    border-radius: 7px;
 }
 
 .contact-section {
@@ -326,6 +337,170 @@ div.info-container .contact-card section a p {
     margin: 0rem 1rem;
 }
 
+div.ticket-modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: var(--background-color);
+    z-index: 3;
+    display: grid;
+    justify-content: center;
+    display: none;
+    animation: slideDown 0.32s linear;
+}
+
+div.table-ticket {
+    overflow-y: scroll;
+}
+
+div.table-ticket button {
+    margin-bottom: 3rem;
+}
+
+div.ticket-modal form {
+    margin-top: -10rem;
+}
+
+div.table-ticket form {
+    margin-top: 0rem;
+}
+
+div.ticket-modal h1,
+div.table-ticket h2 {
+    font-size: 1.35rem;
+    text-align: center;
+    margin: 3rem 0rem;
+}
+
+div.table-ticket h2 {
+    margin: 1rem 0rem;
+    text-align: left;
+}
+
+div.ticket-modal label {
+    font-size: 1.3rem;
+    margin-right: 2rem;
+    margin-left: 0.1rem
+}
+
+div.ticket-modal input[type='text'],
+div.ticket-modal input[type='email'],
+div.ticket-modal input[type='number'],
+div.ticket-modal input[type='file'] {
+    outline: none;
+    border: 2px solid var(--text-color);
+    padding: 0.24rem 0.51rem;
+    border-radius: 4px;
+    font-size: 1.3rem;
+    margin: 1rem 0rem;
+    margin-top: 0.2rem;
+    width: 30rem;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+div.table-ticket input[type="number"].qty {
+    width: 3rem !important;
+    font-size: 1rem;
+}
+
+.head-section {
+    display: flex;
+}
+
+.head-section h2.food {
+    width: 10rem;
+    margin-right: 2rem;
+}
+
+div.table-ticket label.food {
+    width: 10rem;
+}
+
+div.ticket-modal input[type='checkbox'] {
+    transform: scale(1.3);
+}
+
+div.ticket-modal button,
+.vote-section .submit-vote,
+.ticket-modal section li.cancel {
+    border: none;
+    outline: none;
+    padding: 0.78rem 2rem;
+    margin: 1rem 0rem;
+    margin-right: 2rem;
+    border-radius: 4px;
+    font-size: 1.16rem;
+    font-weight: 500;
+    list-style-type: none;
+}
+
+.ticket-modal div.flex-form-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.ticket-modal section li.cancel {
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    background: var(--background-color);
+    padding: 0.4rem 2rem;
+    width: 8rem;
+}
+
+div.ticket-modal button[type="submit"],
+.vote-section .submit-vote {
+    background-color: var(--text-color);
+}
+
+.vote-section {
+    display: none;
+}
+
+.vote-section form ul {
+    max-width: 100vw;
+    overflow-x: auto;
+    display: flex;
+    padding: 1rem 0rem;
+    margin: 2rem 0rem;
+}
+
+.vote-section form ul li {
+    margin: 0rem 2rem;
+    list-style-type: none;
+    box-shadow: 0.35rem 0.35rem 1rem rgba(0, 0, 0, 0.42);
+    padding: 0.4rem 2rem;
+    border-radius: 5px;
+}
+
+.vote-section form ul li img {
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.vote-section form ul li p {
+    font-size: 1.13rem;
+    text-align: center;
+    margin: 0.3rem 0rem;
+}
+
+.vote-section form ul li label {
+    font-size: 1.14rem;
+    margin-left: 0.2rem;
+}
+
+.vote-section h1 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.vote-section button.submit-vote {
+    margin: 0rem 4rem;
+}
+
 
 /*Tickets*/
 
@@ -366,9 +541,11 @@ div.info-container .contact-card section a p {
     body {
         max-width: 100vw;
         overflow-x: hidden !important;
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
     nav.navigation {
-        bottom: 0;
+        bottom: -1%;
         box-shadow: 0px 0px 3.34px rgba(95, 94, 92, 0.418);
         opacity: 0.96;
         margin-top: 8rem
@@ -431,6 +608,10 @@ div.info-container .contact-card section a p {
         margin: 0rem;
         padding: 1.4rem 1rem;
     }
+    .prom-honors-section ul.prom-honors-list li div.img-card {
+        display: grid;
+        justify-content: center;
+    }
     .prom-honors-section ul.prom-honors-list .prom-honor-card {
         padding: 1rem 2rem;
         margin: 0rem 0rem;
@@ -440,10 +621,47 @@ div.info-container .contact-card section a p {
         margin: 2rem 0rem;
         align-items: center;
     }
+    div.ticket-modal {
+        display: grid;
+        justify-content: center;
+        display: none;
+    }
+    div.ticket-modal input[type='text'],
+    div.ticket-modal input[type='email'],
+    div.ticket-modal input[type='number'],
+    div.ticket-modal input[type='file'] {
+        width: 90vw;
+        margin-top: 0.2rem;
+        font-size: 1.13rem;
+    }
+    div.ticket-modal form {
+        margin-top: 0rem;
+    }
+    div.ticket-modal label {
+        font-size: 1.1rem;
+        margin-right: 1rem;
+    }
+    div.ticket-modal button {
+        font-size: 1.12rem;
+        padding: 0.5rem 1.7rem;
+    }
+    .ticket-modal li.cancel {
+        padding: 0.48rem 1.7rem;
+    }
+    .vote-section ul form li img {
+        height: 10rem;
+        width: 10rem;
+    }
 }
 
 @keyframes spin {
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-8vh);
     }
 }
